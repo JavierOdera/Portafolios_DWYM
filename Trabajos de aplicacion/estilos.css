@@ -1,0 +1,25 @@
+h1 {
+    background-color: grey;
+    color: blue;
+    width: 400px;
+    font-size: large;
+}
+
+p {
+    background-color: brown;
+    width: 200px;
+    font-style: italic;
+    color: blue;
+}
+
+#titulo {
+    color: red;
+    font-style: unset;
+    width: 100px;
+}
+
+.container {
+    width: 2000px;
+    height: 200px;
+    background-color: black;
+}
