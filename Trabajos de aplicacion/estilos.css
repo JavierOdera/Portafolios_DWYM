@@ -1,4 +1,4 @@
-h1 {
+h1+p {
     background-color: grey;
     color: blue;
     width: 400px;
@@ -6,20 +6,33 @@ h1 {
 }
 
 p {
-    background-color: brown;
+    background-color: yellow;
     width: 200px;
     font-style: italic;
     color: blue;
-}
-
-#titulo {
-    color: red;
-    font-style: unset;
-    width: 100px;
 }
 
 .container {
     width: 2000px;
     height: 200px;
     background-color: black;
+}
+
+body div p {
+    color: white;
+    font-size:x-large;
+}
+
+button~p {
+    color: blueviolet;
+    background-color: blue;
+}
+
+button::after {
+    content: "para salir";
+    width: 200;
+}
+
+#compras>p::before{
+    content: "comprar ";
 }
