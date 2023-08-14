@@ -1,3 +1,8 @@
+body {
+    width: 100vw;
+    margin: 0px;
+}
+
 h1+p {
     background-color: grey;
     color: blue;
@@ -13,14 +18,14 @@ p {
 }
 
 .container {
-    width: 2000px;
+    width: 200px;
     height: 200px;
     background-color: black;
 }
 
 body div p {
     color: white;
-    font-size:x-large;
+    font-size: x-large;
 }
 
 button~p {
@@ -30,9 +35,30 @@ button~p {
 
 button::after {
     content: "para salir";
-    width: 200;
+    width: 100px;
 }
 
-#compras>p::before{
+#compras>p::before {
     content: "comprar ";
+}
+
+#compras {
+    grid-template-columns: 3;
+    align-items: center;
+}
+
+button {
+    padding: 15px;
+    margin: 50px;
+}
+
+#compras {
+
+    /*text-align: right;*/
+}
+
+@media (width>450px) {
+    div {
+        background-color: red;
+    }
 }
