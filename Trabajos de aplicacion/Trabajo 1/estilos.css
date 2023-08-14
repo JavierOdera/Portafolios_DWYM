@@ -1,0 +1,38 @@
+h1+p {
+    background-color: grey;
+    color: blue;
+    width: 400px;
+    font-size: large;
+}
+
+p {
+    background-color: yellow;
+    width: 200px;
+    font-style: italic;
+    color: blue;
+}
+
+.container {
+    width: 2000px;
+    height: 200px;
+    background-color: black;
+}
+
+body div p {
+    color: white;
+    font-size:x-large;
+}
+
+button~p {
+    color: blueviolet;
+    background-color: blue;
+}
+
+button::after {
+    content: "para salir";
+    width: 200;
+}
+
+#compras>p::before{
+    content: "comprar ";
+}
