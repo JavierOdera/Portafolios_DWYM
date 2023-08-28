@@ -1,0 +1,61 @@
+.miColumna {
+    background-color: rgb(213, 205, 142);
+    margin: 10px;
+    width: 400px;
+
+}
+
+.cuerpo {
+    background-color: beige;
+}
+
+.card {
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.card-body {
+    background-color: rgb(83, 83, 58);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+}
+
+.card-body>h5,
+p {
+    color: white;
+    font: bold;
+}
+
+.tituloTarjeta {
+    height: 70px;
+
+}
+
+.miContainer {
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: initial;
+
+}
+
+.miRow {
+    justify-content: space-around;
+}
+
+.imagenDeTarjeta {
+    height: 100px;
+    width: auto;
+    border-top-left-radius: 20;
+    border-top-left-radius: 20;
+}
+
+.myForm {
+    display: none;
+}
+
+.myFormShow {
+    display: block;
+}
+

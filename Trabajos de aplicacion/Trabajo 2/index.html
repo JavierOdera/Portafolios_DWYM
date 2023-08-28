@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="codigo.js"></script>
+</head>
+
+<body class="cuerpo">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <h1>El mejor proyecto del mundo!</h1>
+    <h5 id="subtitulo">Descripcion del proyecto: es un excelente proyecto</h5>
+
+
+    <div class="container text-center miContainer">
+        <div class="row align-items-start miRow">
+
+            <div class="col-md-2 col-sm-4 miColumna">
+                <div class="tituloTarjeta">
+                    <h3>Tareas por iniciar</h3>
+                </div>
+                <ul id="areaDeTarjetas">
+                    <li class="card">
+                        <img src="https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png"
+                            class="card-img-top imagenDeTarjeta" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Resumen de la tarea a realizar.</p>
+                            <div>
+                                <button onclick="retroceder()">
+                                    retroceder
+                                </button>
+                                <button onclick="eliminar()">
+                                    eliminar
+                                </button>
+                                <button onclick="proceder()">
+                                    proceder
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <button id="TareasPorIniciar" onclick="addCard(event)">
+                    Agregar tarjeta
+                </button>
+            </div>
+
+            <div class="col-md-2 col-sm-4 miColumna">
+
+                <div class="tituloTarjeta">
+                    <h3>Tareas en proceso</h3>
+                </div>
+                <ul id="areaDeTarjetas">
+                    <li class="card">
+                        <img src="https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png"
+                            class="card-img-top imagenDeTarjeta" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Resumen de la tarea a realizar.</p>
+                            <div>
+                                <button onclick="retroceder()">
+                                    retroceder
+                                </button>
+                                <button onclick="eliminar()">
+                                    eliminar
+                                </button>
+                                <button onclick="proceder()">
+                                    proceder
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <button id="TareasEnProceso" onclick="addCard(event)">
+                    Agregar tarjeta
+                </button>
+            </div>
+
+            <div class="col-md-2 col-sm-4 miColumna">
+
+                <div class="tituloTarjeta">
+                    <h3>Tareas finalizadas</h3>
+                </div>
+
+                <ul id="areaDeTarjetas">
+                    <li class="card">
+                        <img src="https://avatars.githubusercontent.com/u/13066412?v=4"
+                            class="card-img-top imagenDeTarjeta" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Resumen de la tarea a realizar.</p>
+                            <div>
+                                <button onclick="retroceder()">
+                                    retroceder
+                                </button>
+                                <button onclick="eliminar()">
+                                    eliminar
+                                </button>
+                                <button onclick="proceder()">
+                                    proceder
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <button id="TareasFinalizadasBoton" onclick="addCard(event)">
+                    Agregar tarjeta
+                </button>
+
+            </div>
+
+
+            <div class="col-md-2 col-sm-4 miColumna" id="otrasIdeasContainer">
+
+                <div class="tituloTarjeta">
+                    <h3>Otras ideas</h3>
+                </div>
+
+                <ul id="areaDeTarjetas">
+                    <li class="card">
+                        <img src="https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png"
+                            class="card-img-top imagenDeTarjeta" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Resumen de la tarea a realizar.</p>
+                            <div>
+                                <button onclick="retroceder()">
+                                    retroceder
+                                </button>
+                                <button onclick="eliminar()">
+                                    eliminar
+                                </button>
+                                <button onclick="proceder()">
+                                    proceder
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <button id="otrasIdeasBoton" onclick="addCard(event)">
+                    Agregar tarjeta
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!--
+    ideas:
+colapsable
+edicion de texto
+agregar/eliminar tarjetas
+links?
+https://avatars.githubusercontent.com/u/13066412?v=4
+https://i.blogs.es/e652ca/harold-pain-meme/840_560.jpeg
+
+*/-->>
