@@ -1,29 +1,35 @@
 function addCard(event) {
-    console.log('target', event.target.id);
-    switch (event.target.id){
-        case "TareasPorIniciar":
+    let target;
+    let nombre = document.getElementById("nombre").value;
+    let resumen = document.getElementById("resumen").value;
+    let etapa = document.getElementById("etapa").value
+    switch (etapa) {
+        case "Por iniciar":
             imagen = "https://i.blogs.es/e652ca/harold-pain-meme/840_560.jpeg";
+            target = document.getElementById("listaPorIniciar")
             break;
-        case "TareasEnProceso":
+        case "En proceso":
             imagen = "https://i.ytimg.com/vi/6iu9i0X3rZ0/maxresdefault.jpg";
+            target = document.getElementById("listaEnProceso")
             break;
-        case "TareasFinalizadasBoton":
+        case "Finalizadas":
             imagen = "https://avatars.githubusercontent.com/u/13066412?v=4";
+            target = document.getElementById("listaFinalizadas")
             break;
-        case "otrasIdeasBoton":
+        case "Otras ideas":
             imagen = "https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png";
+            target = document.getElementById("listaOtras")
             break;
         default:
             imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ProhibitionSign2.svg/1200px-ProhibitionSign2.svg.png"
     }
-    let target = document.getElementById(event.target.id) //hay que convertir esto en un formulario
     const markup = `
     <li class="card">
                     <img src=${imagen}
                         class="card-img-top imagenDeTarjeta" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Resumen de la tarea a realizar.</p>
+                        <h5 class="card-title">${nombre}</h5>
+                        <p class="card-text">${resumen}</p>
                         <div>
                             <button onclick="retoceder()">
                                 retroceder
@@ -37,7 +43,7 @@ function addCard(event) {
    `;
     const newCard = document.createElement("div")
     newCard.innerHTML = markup;
-    target.previousElementSibling.append(newCard)
+    target.append(newCard)
 }
 
 function proceder() {

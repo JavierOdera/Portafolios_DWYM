@@ -27,30 +27,9 @@
                 <div class="tituloTarjeta">
                     <h3>Tareas por iniciar</h3>
                 </div>
-                <ul id="areaDeTarjetas">
-                    <li class="card">
-                        <img src="https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png"
-                            class="card-img-top imagenDeTarjeta" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Resumen de la tarea a realizar.</p>
-                            <div>
-                                <button onclick="retroceder()">
-                                    retroceder
-                                </button>
-                                <button onclick="eliminar()">
-                                    eliminar
-                                </button>
-                                <button onclick="proceder()">
-                                    proceder
-                                </button>
-                            </div>
-                        </div>
-                    </li>
+                <ul id="listaPorIniciar">
+                    
                 </ul>
-                <button id="TareasPorIniciar" onclick="addCard(event)">
-                    Agregar tarjeta
-                </button>
             </div>
 
             <div class="col-md-2 col-sm-4 miColumna">
@@ -58,30 +37,9 @@
                 <div class="tituloTarjeta">
                     <h3>Tareas en proceso</h3>
                 </div>
-                <ul id="areaDeTarjetas">
-                    <li class="card">
-                        <img src="https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png"
-                            class="card-img-top imagenDeTarjeta" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Resumen de la tarea a realizar.</p>
-                            <div>
-                                <button onclick="retroceder()">
-                                    retroceder
-                                </button>
-                                <button onclick="eliminar()">
-                                    eliminar
-                                </button>
-                                <button onclick="proceder()">
-                                    proceder
-                                </button>
-                            </div>
-                        </div>
-                    </li>
+                <ul id="listaEnProceso">
+                    
                 </ul>
-                <button id="TareasEnProceso" onclick="addCard(event)">
-                    Agregar tarjeta
-                </button>
             </div>
 
             <div class="col-md-2 col-sm-4 miColumna">
@@ -90,31 +48,9 @@
                     <h3>Tareas finalizadas</h3>
                 </div>
 
-                <ul id="areaDeTarjetas">
-                    <li class="card">
-                        <img src="https://avatars.githubusercontent.com/u/13066412?v=4"
-                            class="card-img-top imagenDeTarjeta" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Resumen de la tarea a realizar.</p>
-                            <div>
-                                <button onclick="retroceder()">
-                                    retroceder
-                                </button>
-                                <button onclick="eliminar()">
-                                    eliminar
-                                </button>
-                                <button onclick="proceder()">
-                                    proceder
-                                </button>
-                            </div>
-                        </div>
-                    </li>
+                <ul id="listaFinalizadas">
+                    
                 </ul>
-                <button id="TareasFinalizadasBoton" onclick="addCard(event)">
-                    Agregar tarjeta
-                </button>
-
             </div>
 
 
@@ -124,34 +60,63 @@
                     <h3>Otras ideas</h3>
                 </div>
 
-                <ul id="areaDeTarjetas">
-                    <li class="card">
-                        <img src="https://media.licdn.com/dms/image/C4D03AQEDe2ozEgGofA/profile-displayphoto-shrink_800_800/0/1658508660538?e=2147483647&v=beta&t=fWHYr7Juttx3BEGqncYuebqWgarFjAEPNWU2oFv1Png"
-                            class="card-img-top imagenDeTarjeta" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Resumen de la tarea a realizar.</p>
-                            <div>
-                                <button onclick="retroceder()">
-                                    retroceder
-                                </button>
-                                <button onclick="eliminar()">
-                                    eliminar
-                                </button>
-                                <button onclick="proceder()">
-                                    proceder
-                                </button>
-                            </div>
-                        </div>
-                    </li>
+                <ul id="listaOtras">
+                    
                 </ul>
+            </div>
 
-                <button id="otrasIdeasBoton" onclick="addCard(event)">
-                    Agregar tarjeta
-                </button>
+
+
+
+
+
+
+
+
+
+        </div>
+        <button id="addCard" class="btn btn-primary" type="button" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Agregar tarjeta
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva tarjeta</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        Por favor, rellene los siguientes campos
+
+                    </div>
+
+                    <form class="formulario">
+                        <label for="Etapa">Etapa de tarea:</label>
+                        <select name="etapa" id="etapa">
+                            <option value="Por iniciar">Por iniciar</option>
+                            <option value="En proceso">En proceso</option>
+                            <option value="Finalizadas">Finalizadas</option>
+                            <option value="Otras ideas">Otras ideas</option>
+                        </select> <br>
+
+                        <label for="nombre">Nombre de tarea:</label><br>
+                        <input type="text" id="nombre" name="nombre"><br>
+                        <label for="resumen">Descripcion de tarea:</label><br>
+                        <input type="text" id="resumen" name="resumen"><br>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" onclick="addCard(event);">Aceptar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 
 </body>
 

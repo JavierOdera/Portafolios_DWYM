@@ -51,11 +51,13 @@ p {
     border-top-left-radius: 20;
 }
 
-.myForm {
-    display: none;
+.formulario {
+                          /*tengo que cambia resto para que se tire todo a la izquierda*/
 }
 
-.myFormShow {
-    display: block;
+#addCard {
+    position:absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
 }
-
