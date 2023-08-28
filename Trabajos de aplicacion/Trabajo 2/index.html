@@ -28,7 +28,7 @@
                     <h3>Tareas por iniciar</h3>
                 </div>
                 <ul id="listaPorIniciar">
-                    
+
                 </ul>
             </div>
 
@@ -38,7 +38,7 @@
                     <h3>Tareas en proceso</h3>
                 </div>
                 <ul id="listaEnProceso">
-                    
+
                 </ul>
             </div>
 
@@ -49,7 +49,7 @@
                 </div>
 
                 <ul id="listaFinalizadas">
-                    
+
                 </ul>
             </div>
 
@@ -61,7 +61,7 @@
                 </div>
 
                 <ul id="listaOtras">
-                    
+
                 </ul>
             </div>
 
@@ -75,10 +75,6 @@
 
 
         </div>
-        <button id="addCard" class="btn btn-primary" type="button" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">
-            Agregar tarjeta
-        </button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -109,12 +105,16 @@
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" onclick="addCard(event);">Aceptar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addCard(event);">Aceptar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <button id="addCard" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Agregar tarjeta
+    </button>
 
 
 

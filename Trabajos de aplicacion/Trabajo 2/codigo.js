@@ -44,6 +44,9 @@ function addCard(event) {
     const newCard = document.createElement("div")
     newCard.innerHTML = markup;
     target.append(newCard)
+    document.getElementById("nombre").value = '';
+    document.getElementById("resumen").value = '';
+    document.getElementById("etapa").value = "listaPorIniciar";
 }
 
 function proceder() {
