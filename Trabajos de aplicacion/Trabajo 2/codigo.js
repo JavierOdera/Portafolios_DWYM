@@ -34,6 +34,9 @@ function addCard(event) {
                             <button onclick="retoceder()">
                                 retroceder
                             </button>
+                            <button onclick="eliminar()">
+                                eliminar
+                            </button>
                             <button onclick="proceder()">
                                 proceder
                             </button>
