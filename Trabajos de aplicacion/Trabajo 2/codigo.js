@@ -31,13 +31,13 @@ function addCard(event) {
                         <h5 class="card-title">${nombre}</h5>
                         <p class="card-text">${resumen}</p>
                         <div>
-                            <button onclick="retoceder()">
+                            <button onclick="retroceder(this)">
                                 retroceder
                             </button>
-                            <button onclick="eliminar()">
+                            <button onclick="eliminar(this)">
                                 eliminar
                             </button>
-                            <button onclick="proceder()">
+                            <button onclick="proceder(this)">
                                 proceder
                             </button>
                         </div>
@@ -52,14 +52,31 @@ function addCard(event) {
     document.getElementById("etapa").value = "listaPorIniciar";
 }
 
-function proceder() {
-    alert("falta implementar")
+function proceder(boton) {
+    let target = boton.parentNode.parentNode.parentNode.parentNode
+    if (target.parentNode.id === "listaPorIniciar") {
+        let newTarget = document.getElementById("listaEnProceso")
+        newTarget.append(target)
+    }
+    else if (target.parentNode.id === "listaEnProceso") {
+        let newTarget = document.getElementById("listaFinalizadas");
+        newTarget.append(target);
+    }
 }
 
-function eliminar() {
-    alert("falta implementar")
+function eliminar(boton) {
+    let target = boton.parentNode.parentNode.parentNode.parentNode;
+    target.remove();
 }
 
-function retroceder() {
-    alert("falta implementar")
+function retroceder(boton) {
+    let target = boton.parentNode.parentNode.parentNode.parentNode
+    if (target.parentNode.id === "listaEnProceso") {
+        let newTarget = document.getElementById("listaPorIniciar")
+        newTarget.append(target)
+    }
+    else if (target.parentNode.id === "listaFinalizadas") {
+        let newTarget = document.getElementById("listaEnProceso");
+        newTarget.append(target);
+    }
 }

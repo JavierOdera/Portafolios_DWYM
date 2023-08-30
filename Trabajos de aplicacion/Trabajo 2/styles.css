@@ -52,12 +52,12 @@ p {
 }
 
 .formulario {
-                          /*tengo que cambia resto para que se tire todo a la izquierda*/
+    /*tengo que cambia resto para que se tire todo a la izquierda*/
 }
 
 #addCard {
-    position:absolute;
-    bottom: 24px;
-    right: 24px;
+    position: sticky;
+    bottom: 10%;
+    left: 90%;
     z-index: 1000;
 }
