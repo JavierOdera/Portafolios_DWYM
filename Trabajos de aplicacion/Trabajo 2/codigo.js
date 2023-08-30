@@ -23,7 +23,25 @@ function addCard(event) {
         default:
             imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ProhibitionSign2.svg/1200px-ProhibitionSign2.svg.png"
     }
-    const markup = `
+    if(etapa === "Otras ideas"){
+    var markup = `
+    <li class="card">
+                    <img src=${imagen}
+                        class="card-img-top imagenDeTarjeta" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${nombre}</h5>
+                        <p class="card-text">${resumen}</p>
+                        <div>
+                            <button onclick="eliminar(this)">
+                                eliminar
+                            </button>
+                        </div>
+                    </div>
+                </li>
+   `;
+    }
+    else{
+        var markup = `
     <li class="card">
                     <img src=${imagen}
                         class="card-img-top imagenDeTarjeta" alt="...">
@@ -44,21 +62,24 @@ function addCard(event) {
                     </div>
                 </li>
    `;
+    }
     const newCard = document.createElement("div")
     newCard.innerHTML = markup;
     target.append(newCard)
     document.getElementById("nombre").value = '';
     document.getElementById("resumen").value = '';
-    document.getElementById("etapa").value = "listaPorIniciar";
+    document.getElementById("etapa").value = "Por iniciar";
 }
 
 function proceder(boton) {
     let target = boton.parentNode.parentNode.parentNode.parentNode
     if (target.parentNode.id === "listaPorIniciar") {
+        target.firstElementChild.firstElementChild.src = "https://i.ytimg.com/vi/6iu9i0X3rZ0/maxresdefault.jpg"
         let newTarget = document.getElementById("listaEnProceso")
         newTarget.append(target)
     }
     else if (target.parentNode.id === "listaEnProceso") {
+        target.firstElementChild.firstElementChild.src = "https://avatars.githubusercontent.com/u/13066412?v=4"
         let newTarget = document.getElementById("listaFinalizadas");
         newTarget.append(target);
     }
@@ -72,10 +93,12 @@ function eliminar(boton) {
 function retroceder(boton) {
     let target = boton.parentNode.parentNode.parentNode.parentNode
     if (target.parentNode.id === "listaEnProceso") {
+        target.firstElementChild.firstElementChild.src = "https://i.blogs.es/e652ca/harold-pain-meme/840_560.jpeg"
         let newTarget = document.getElementById("listaPorIniciar")
         newTarget.append(target)
     }
     else if (target.parentNode.id === "listaFinalizadas") {
+        target.firstElementChild.firstElementChild.src = "https://i.ytimg.com/vi/6iu9i0X3rZ0/maxresdefault.jpg"
         let newTarget = document.getElementById("listaEnProceso");
         newTarget.append(target);
     }
