@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Juego } from '../juego';
 
 @Component({
   selector: 'app-juegos',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./juegos.component.css']
 })
 export class JuegosComponent {
-  
+  juego: Juego = {
+    id: 1,
+    nombre: 'Buscaminas',
+    imagen: '',
+    rating: 0
+  }
 }
