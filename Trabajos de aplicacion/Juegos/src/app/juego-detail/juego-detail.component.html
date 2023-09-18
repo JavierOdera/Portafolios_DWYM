@@ -1,0 +1,10 @@
+<div *ngIf="mostrar1">
+
+    <h2>{{juego.nombre | uppercase}}</h2>
+    <div>Agradecemos tu opinion</div>
+    <div>
+        <label for="Puntaje">Puntaje: </label>
+        <input id="juego-name" [(ngModel)]="juego.rating" placeholder="1-2-3-4-5">
+    </div>
+
+</div>

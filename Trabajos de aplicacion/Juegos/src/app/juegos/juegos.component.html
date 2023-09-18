@@ -1,11 +1,25 @@
 <p>https://api.rawg.io/api/games?key=66b0a5f8abb0457d9989f39b896e6b62</p>
 
+<h2>Juegos</h2> <!-- me imagino que aca debo modelar las tarjetas-->
 <ul class="juegos">
-    <li>
+
+    <li *ngFor="let juego of juegos">
+        {{juego.nombre}}
+
+        <button type="button" (click)="jugar(juego)">
+            <span class="name">jugar</span>
+        </button>
+
+        <button type="button" (click)="puntuar(juego)">
+            <span class="name">detail</span>
+        </button>
 
     </li>
+
+    
+
+
+      <app-juego-detail [juego]="selectedJuego" [mostrar1]="detailsPressed"></app-juego-detail>
+      <app-juego-jugar [juego]="selectedJuego" [mostrar2]="jugarPressed"></app-juego-jugar>
+
 </ul>
-
-<div>
-
-</div>
