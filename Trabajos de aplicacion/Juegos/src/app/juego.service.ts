@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Juego } from './juego';
+import { JUEGOS } from './mock-juegos';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
@@ -12,4 +13,8 @@ export class JuegoService {
 
   constructor() { }
 
+  getJuegos(): Observable<Juego[]> {
+    const juegos = of(JUEGOS);
+    return juegos;
+  }
 }

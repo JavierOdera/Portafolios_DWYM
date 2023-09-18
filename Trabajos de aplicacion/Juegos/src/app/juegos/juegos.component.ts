@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Juego } from '../juego';
-import { JUEGOS } from '../mock-juegos';
+import { JuegoService } from '../juego.service';
 
 @Component({
   selector: 'app-juegos',
@@ -8,15 +8,11 @@ import { JUEGOS } from '../mock-juegos';
   styleUrls: ['./juegos.component.css']
 })
 export class JuegosComponent {
-  juegos = JUEGOS;
+  juegos: Juego[] = [];
+  constructor(private juegoService: JuegoService) { }
   jugarPressed = false;
   detailsPressed = false;
-  /*juego: Juego = {
-    id: 1,
-    nombre: 'Buscaminas',
-    imagen: '',
-    rating: 4
-  }*/
+
 
   selectedJuego: Juego = {
     id: 0,
@@ -29,10 +25,19 @@ export class JuegosComponent {
     this.selectedJuego = juego;
     this.jugarPressed = false;
   }
-  jugar(juego:Juego) {
+  jugar(juego: Juego) {
     this.jugarPressed = true;
     this.selectedJuego = juego;
     this.detailsPressed = false;
+  }
+
+  getJuegos(): void {
+    this.juegoService.getJuegos()
+        .subscribe(juegos => this.juegos = juegos);
+  }
+
+  ngOnInit(): void {
+    this.getJuegos();
   }
 }
 
