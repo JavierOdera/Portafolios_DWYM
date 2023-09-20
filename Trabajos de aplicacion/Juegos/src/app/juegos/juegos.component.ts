@@ -9,6 +9,7 @@ import { JuegoService } from '../juego.service';
 })
 export class JuegosComponent {
   juegos: Juego[] = [];
+  pagina: number = 1;
   constructor(private juegoService: JuegoService) { }
   jugarPressed = false;
   detailsPressed = false;
@@ -33,7 +34,19 @@ export class JuegosComponent {
 
   getJuegos(): void {
     this.juegoService.getJuegos()
-        .subscribe(juegos => this.juegos = juegos);
+      .subscribe(juegos => {
+        juegos.results.map((juego: any) => {
+          let nuevoJuego = {
+            id: juego.id,
+            nombre: juego.name,
+            imagen: juego.background_image,
+            rating: juego.rating
+          }
+          this.juegos.push(nuevoJuego)
+          this.pagina++;
+        })
+      })
+
   }
 
   ngOnInit(): void {

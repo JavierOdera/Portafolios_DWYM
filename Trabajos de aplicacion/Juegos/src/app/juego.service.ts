@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Juego } from './juego';
-import { JUEGOS } from './mock-juegos';
+import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JuegoService {
-  private url = "https://api.rawg.io/api/games?key=66b0a5f8abb0457d9989f39b896e6b62"
+  private url = "https://api.rawg.io"
+  private key = "api/games?key=66b0a5f8abb0457d9989f39b896e6b62"
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
-  getJuegos(): Observable<Juego[]> {
-    const juegos = of(JUEGOS);
-    return juegos;
+  getJuegos(): Observable<any> {
+    const urlFinal = `${this.url}/${this.key}`
+    const response = this.http.get<any>(urlFinal) //importante
+    return response;
   }
+
+
+  
 }
