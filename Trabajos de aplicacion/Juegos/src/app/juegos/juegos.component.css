@@ -1,0 +1,22 @@
+.columnaJuegos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
+.card {
+    height: 100;
+    margin: 29px;
+}
+.card-body{
+    background-color: rgb(230, 186, 132);
+}
+.card-footer{
+    background-color: rgb(230, 186, 132);
+}
+
+.btn{
+    margin: 5px;
+    background-color: orange;
+}

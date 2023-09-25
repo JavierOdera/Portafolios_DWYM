@@ -21,11 +21,11 @@ export class JuegosComponent {
     imagen: "",
     rating: 0
   };;
-  puntuar(juego: Juego): void {
+  /*puntuar(juego: Juego): void {
     this.detailsPressed = true;
     this.selectedJuego = juego;
     this.jugarPressed = false;
-  }
+  }*/
   jugar(juego: Juego) {
     this.jugarPressed = true;
     this.selectedJuego = juego;
