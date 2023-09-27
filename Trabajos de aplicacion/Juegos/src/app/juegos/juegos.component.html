@@ -1,10 +1,11 @@
-<h2>Juegos</h2> <!-- me imagino que aca debo modelar las tarjetas-->
+<h2>Juegos</h2>
+<app-filtro (busqueda)="recibirMensaje($event)" />
 <div class="juegos">
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5" class="columnaJuegos"> <!--algunas tarjetas quedan cortas-->
-                    <div *ngFor="let juego of juegos">
+                    <div *ngFor="let juego of juegosFiltrados">
                         <div class="card h-95">
                             <!-- Product image-->
                             <img class="card-img-top" src={{juego.imagen}} alt="..." />
@@ -13,29 +14,26 @@
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{juego.nombre}}</h5>
+                                    <div>Cantidad de sugerencias: {{juego.sugerencias}}</div>
                                     <!-- Product price-->
-                                    $40.00 - $80.00
+                                    
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0">
                                 <div class="text-center">
-                                    <button class="btn btn-outline-dark mt-auto" (click)="jugar(juego)">
+                                    <button class="btn btn-outline-dark mt-auto" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" (click)="jugar(juego)">
                                         Jugar
                                     </button>
                                     <!--a class="btn btn-outline-dark mt-auto" href="#">View options</a>
-                                    <!--por hacer: dar detalles-->
-                                    <!--button class="btn btn-outline-dark mt-auto" (click)="puntuar(juego)">
+                                    <por hacer: dar detalles-->
+                                    <button class="btn btn-outline-dark mt-auto" (click)="puntuar(juego)">
                                         Puntuar
-                                    </!--button-->
-
-                                    <app-juego-detail [juego]="selectedJuego"
-                                        [mostrar1]="detailsPressed">
+                                    </button>
+                                    <app-juego-detail *ngIf="juego.nombre===selectedJuego.nombre"
+                                        [juego]="selectedJuego" [mostrar1]="detailsPressed">
                                     </app-juego-detail>
-
-                                    <app-juego-jugar [juego]="selectedJuego"
-                                        [mostrar2]="jugarPressed">
-                                    </app-juego-jugar>
                                 </div>
                             </div>
                         </div>
@@ -43,14 +41,27 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{selectedJuego.nombre}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="card-img-top" src={{selectedJuego.imagen}} alt="..." />
+                    </div>
+                    <div>
+                        <div>ID: {{selectedJuego.id}}</div>
+                        <div>Link del juego: <a href="https://store.steampowered.com/?">link</a></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                            Volver
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-
-
-
-
-
-    <app-juego-detail [juego]="selectedJuego" [mostrar1]="detailsPressed"></app-juego-detail>
-    <app-juego-jugar [juego]="selectedJuego" [mostrar2]="jugarPressed"></app-juego-jugar>
-
 </div>

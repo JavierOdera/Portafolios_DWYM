@@ -3,4 +3,5 @@ export interface Juego {
     nombre: string;
     imagen: string;
     rating: number;
+    sugerencias: number;
   }

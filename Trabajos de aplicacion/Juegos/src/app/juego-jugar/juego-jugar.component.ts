@@ -11,7 +11,8 @@ export class JuegoJugarComponent {
     id: 0,
     nombre: "",
     imagen: "",
-    rating: 0
+    rating: 0,
+    sugerencias: 0
   };
   @Input() mostrar2?: boolean;
 }
