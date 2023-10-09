@@ -2,10 +2,10 @@
 <app-filtro (busqueda)="recibirMensaje($event)" />
 <div class="juegos">
     <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5" class="columnaJuegos"> <!--algunas tarjetas quedan cortas-->
-                    <div *ngFor="let juego of juegosFiltrados">
+        <div class="container px-4 px-lg-5 mt-5"><!--contenedor-->
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"><!--fila-->
+                <div class="col mb-5" class="columnaJuegos"> <!--columnas-->
+                    <div *ngFor="let juego of juegosFiltrados">  <!--IMPORTANTE, esto es lo que crea las diferentes tarjetas-->>
                         <div class="card h-95">
                             <!-- Product image-->
                             <img class="card-img-top" src={{juego.imagen}} alt="..." />
@@ -23,8 +23,8 @@
                             <div class="card-footer p-4 pt-0 border-top-0">
                                 <div class="text-center">
                                     <button class="btn btn-outline-dark mt-auto" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" (click)="jugar(juego)">
-                                        Jugar
+                                        data-bs-target="#exampleModal" (click)="detalles(juego)">
+                                        Detalles
                                     </button>
                                     <!--a class="btn btn-outline-dark mt-auto" href="#">View options</a>
                                     <por hacer: dar detalles-->

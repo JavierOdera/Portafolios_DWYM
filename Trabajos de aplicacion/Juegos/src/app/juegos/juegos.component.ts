@@ -39,7 +39,7 @@ export class JuegosComponent {
     this.selectedJuego = juego;
     this.jugarPressed = false;
   }
-  jugar(juego: Juego) {
+  detalles(juego: Juego) {
     this.jugarPressed = true;
     this.selectedJuego = juego;
     this.detailsPressed = false;

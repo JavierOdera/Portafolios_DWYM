@@ -3,20 +3,21 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class JuegoService {
-  private url = "https://api.rawg.io"
-  private key = "api/games?key=66b0a5f8abb0457d9989f39b896e6b62"
+export class ProductoService {
+  private url = ""//aca va el url
+  private key = ""// aca va lo que sigue al url
 
   constructor(
-    private http: HttpClient,
-  ) { }
+    private http:HttpClient,
+  ) {}
 
-  getJuegos(): Observable<any> {
+  getProductos(): Observable<any>{
     const urlFinal = `${this.url}/${this.key}`
-    const response = this.http.get<any>(urlFinal) //importante
+    const response = this.http.get<any>(urlFinal)
     return response;
   }
 }
