@@ -1,0 +1,28 @@
+<p>Lista de Jugadores!</p>
+
+
+<div class="container text-center miContainer">
+    <div class="row align-items-start miRow">
+        <div class="col mb-5 columnaProductos">
+            <div *ngFor="let jugador of jugadores" class="col-lg-3 col-md-6 col-12 card-container ">
+                <div class="card">
+
+                    <a routerLink="/detail/{{jugador.nombre}}">
+                        <span class="badge">{{jugador.nombre}}</span> 
+                    </a>
+                    <button type="button" class="delete" title="delete jugador" (click)="delete(jugador)">
+                        x
+                    </button>
+
+                </div>
+            </div>
+            <div *ngIf="jugadores.length <23">
+                <button type="button" class="agregar" title="agrega jugador" (click)="agregar()">agregar
+                    jugador</button>
+            </div>
+            <div *ngIf="jugadores.length ==23">
+                <h2>Plantel Completo!</h2>
+            </div>
+        </div>
+    </div>
+</div>
